@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertion.Selenium.Tests", "FluentAssertion.Selenium.Tests\FluentAssertion.Selenium.Tests.csproj", "{81343F3D-65A6-4336-B617-F47C23C9917B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81343F3D-65A6-4336-B617-F47C23C9917B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81343F3D-65A6-4336-B617-F47C23C9917B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81343F3D-65A6-4336-B617-F47C23C9917B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81343F3D-65A6-4336-B617-F47C23C9917B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF6E0E9E-5966-44C6-9C74-33A2AAD9EB3E}
+	EndGlobalSection
+EndGlobal
