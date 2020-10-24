@@ -1,6 +1,8 @@
 ﻿using FluentAssertion.Selenium.Tests.Enums;
 using FluentAssertion.Selenium.Tests.Fluent.Hooks;
+using FluentAssertion.Selenium.Tests.Interfaces;
 using FluentAssertion.Selenium.Tests.Settings;
+using FluentAssertion.Selenium.Tests.Utility;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
@@ -12,11 +14,13 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
   [TestFixture]
   public sealed class SampleCalculatorTests : DriverBaseHook
   {
+    private ICalculator _calculator;
 
     [OneTimeSetUp]
     public void NavigateToCalculatorExample()
     {
-      _driver.Navigate().GoToUrl(FileSettings.WebPageExampleLocation + @"\WebPageExamples\HtmlExamples\CalculatorExamplePage.html");
+      _driver.Navigate().GoToUrl(FileSettings.GetHtmlFileFromAssemblyFolder("CalculatorExamplePage"));
+      _calculator = new Calculator();
     }
 
     [Test, Order(1)]
@@ -31,7 +35,7 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
 
       // Asserting that Expected Results column matches based on multiplied values x with y
       // And checking to make sure the value is a type of int
-      MathOperations(mathOperator, x, y)
+      _calculator.Calculate(mathOperator, x, y)
         .Should().Be(int.Parse(result))
         .And.BeOfType(typeof(int));
     }
@@ -48,7 +52,7 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
 
       // Asserting that Expected Results column matches based on adding values x with y
       // And checking to make sure the value is a type of int
-      MathOperations(mathOperator, x, y)
+      _calculator.Calculate(mathOperator, x, y)
         .Should().Be(int.Parse(result))
         .And.BeOfType(typeof(int));
     }
@@ -65,7 +69,7 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
 
       // Asserting that Expected Results column matches based on subtracting y from x
       // And checking to make sure the value is a type of int
-      MathOperations(mathOperator, x, y)
+      _calculator.Calculate(mathOperator, x, y)
         .Should().Be(int.Parse(result))
         .And.BeOfType(typeof(int));
     }
@@ -82,7 +86,7 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
 
       // Asserting that Expected Results column matches based on diving value of x with y
       // And checking to make sure the value is a type of int
-      MathOperations(mathOperator, x, y)
+      _calculator.Calculate(mathOperator, x, y)
         .Should().Be(int.Parse(result))
         .And.BeOfType(typeof(int));
     }
@@ -101,34 +105,9 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
       // return type to be double
       using (new AssertionScope())
       {
-        MathOperations("Add", x, y)
+        _calculator.Calculate("Add", x, y)
           .Should().Be(int.Parse(result))
           .And.BeOfType(typeof(double));
-      }
-    }
-
-
-
-    private int MathOperations(string mathOperator, string firstValue, string secondValue)
-    {
-      MathOperators operators = (MathOperators)Enum.Parse(typeof(MathOperators), mathOperator, true);
-
-      int x = int.Parse(firstValue);
-      int y = int.Parse(secondValue);
-
-      switch (operators)
-      {
-        case MathOperators.Add:
-          return x + y;
-        case MathOperators.Sub:
-          return x - y;
-        case MathOperators.Divide:
-          return y == 0 ? 0 : (int)(x / y);
-        case MathOperators.Mutliply:
-          return x * y;
-        default:
-          return 0;
-
       }
     }
   }
