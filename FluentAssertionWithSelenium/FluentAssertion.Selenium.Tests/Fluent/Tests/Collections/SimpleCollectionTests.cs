@@ -9,7 +9,7 @@ using System.Linq;
 namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Collections
 {
   [TestFixture]
-  class SimpleCollectionTests : DriverBaseHook
+  class SimpleCollectionTests : DriverHook
   {
     private IList<IWebElement> _unorderedList => _driver.FindElements(By.XPath(".//ul[@id='unorderedList']/li"));
     [OneTimeSetUp]

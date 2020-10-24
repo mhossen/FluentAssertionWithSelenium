@@ -12,7 +12,7 @@ using System;
 namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
 {
   [TestFixture]
-  public sealed class SampleCalculatorTests : DriverBaseHook
+  public sealed class SampleCalculatorTests : DriverHook
   {
     private ICalculator _calculator;
 
