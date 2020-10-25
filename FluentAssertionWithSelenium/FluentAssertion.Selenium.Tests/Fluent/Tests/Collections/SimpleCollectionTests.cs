@@ -35,5 +35,13 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Collections
         .Should().Contain(company);
     }
 
+    [Test]
+    public void Confirm_ItemList_IsAscendingOrder()
+    {
+      // Assert to check if text is ascending order
+      _unorderedList.Select(t => t.Text).Should()
+        .BeInAscendingOrder();
+    }
+
   }
 }
