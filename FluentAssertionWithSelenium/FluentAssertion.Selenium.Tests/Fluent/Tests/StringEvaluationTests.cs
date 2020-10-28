@@ -17,7 +17,6 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests
       _driver.Navigate().GoToUrl(FileSettings.GetHtmlFileFromAssemblyFolder("StringExample"));
     }
 
-
     [Test, Order(1)]
     public void Assert_StartWithWelcomeText_IsDisplayed()
     {
