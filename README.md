@@ -27,31 +27,25 @@ Before running this project I would check for the .Net SDK installed on my machi
 ```
 string message = "Welcome user John Smith";
 ```
-<br/>
 
 #### Start With
 Evaluates string starts with specific character(s) from the above example if we want to check if the message has the word `Welcome`.
-<br/>
 ```
 message.Should().StartWith("Welcome");
 ```
-<br/>
+
 
 #### End With
 Evaluates string ends with specific character(s) from the above example if we want to check if the message has `John Smith`.
-<br/>
 ```
 message.Should().EndWith("John Smith");
 ```
-<br/>
 
 #### Contains
 Evaluates that string contains a series of character(s) from above example if we want to check if the word `user` exist.
-<br/>
 ```
 message.Should().Contain("user");
 ```
-<br/>
 
 #### Assertion Scope
 Starts an unnamed scope within which multiple assertions can be executed and which will not throw until the scope is disposed.
