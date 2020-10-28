@@ -53,4 +53,16 @@ message.Should().Contain("user");
 ```
 <br/>
 
+#### Assertion Scope
+Starts an unnamed scope within which multiple assertions can be executed and which will not throw until the scope is disposed.
+
+```
+using (new AssertionScope())
+{
+    message.Should().StartWith("Welcome")
+    .And.EndWith("John Smith")
+    .And.Contain("user");
+}
+```
+
 [Fluent Assertion Official Documentation](https://fluentassertions.com/introduction)
