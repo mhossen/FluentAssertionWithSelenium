@@ -22,12 +22,35 @@ Before running this project I would check for the .Net SDK installed on my machi
 <img src="https://github.com/mhossen/FluentAssertionWithSelenium/blob/support-multi-framework/FluentAssertionWithSelenium/FluentAssertion.Selenium.Tests/Images/TrageFramework.jpg" alt="Target Framework" width="350" height="250"/>
 <br/>
 
-### Text Compare
-<code>
-string welcomeMessage = "<p>Welcome user John Smith</p>";
-var actualMessage = driver.FindElement(By.TagName("p")).Text;
+### Text Evaluation
+
+```
+string message = "Welcome user John Smith";
+```
 <br/>
-actualMessage.Should().StartWith("Welcome").And.EndWith("John Smith").And.Contain("user");
-</cod>
+
+#### Start With
+Evaluates string starts with specific character(s) from the above example if we want to check if the message has the word `Welcome`.
+<br/>
+```
+message.Should().StartWith("Welcome");
+```
+<br/>
+
+#### End With
+Evaluates string ends with specific character(s) from the above example if we want to check if the message has `John Smith`.
+<br/>
+```
+message.Should().EndWith("John Smith");
+```
+<br/>
+
+#### Contains
+Evaluates that string contains a series of character(s) from above example if we want to check if the word `user` exist.
+<br/>
+```
+message.Should().Contain("user");
+```
+<br/>
 
 [Fluent Assertion Official Documentation](https://fluentassertions.com/introduction)
