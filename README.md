@@ -24,33 +24,36 @@ Before running this project I would check for the .Net SDK installed on my machi
 
 ### Text Evaluation
 
-```
+```csharp
 string message = "Welcome user John Smith";
 ```
 
 #### Start With
 Evaluates string starts with specific character(s) from the above example if we want to check if the message has the word `Welcome`.
-```
+
+```csharp
 message.Should().StartWith("Welcome");
 ```
 
 
 #### End With
 Evaluates string ends with specific character(s) from the above example if we want to check if the message has `John Smith`.
-```
+
+```csharp
 message.Should().EndWith("John Smith");
 ```
 
 #### Contains
 Evaluates that string contains a series of character(s) from above example if we want to check if the word `user` exist.
-```
+
+```csharp
 message.Should().Contain("user");
 ```
 
 #### Assertion Scope
 Starts an unnamed scope within which multiple assertions can be executed and which will not throw until the scope is disposed.
 
-```
+```csharp
 using (new AssertionScope())
 {
     message.Should().StartWith("Welcome")
