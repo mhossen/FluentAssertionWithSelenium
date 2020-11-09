@@ -15,7 +15,7 @@
 |WebDriverManager|2.11.0|
 
 <br/>
-Before running this project I would check for the .Net SDK installed on my machine then either right click on the project name in Visual Studio Solution Explorer --> Properties --> Application and change the Target framework. Or you can follow the instruction on the following link <a href="https://www.tutorialsteacher.com/core/target-multiple-frameworks-in-aspnet-core2">How to target Multiple Framework</a> to change at <code>.csproj</code> file.
+Before running this project I would check for the .Net SDK installed on my machine then either right click on the project name in <code> Visual Studio Solution Explorer --> Properties --> Application</code> and change the Target framework. Or you can follow the instruction on the following link <a href="https://www.tutorialsteacher.com/core/target-multiple-frameworks-in-aspnet-core2">How to target Multiple Framework</a> to change at <code>.csproj</code> file.
 
 <br/>
 
