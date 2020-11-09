@@ -1,6 +1,7 @@
 ﻿using FluentAssertion.Selenium.Tests.Interfaces;
 using FluentAssertion.Selenium.Tests.Utility;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using NUnit.Framework;
 using System;
 
@@ -24,9 +25,12 @@ namespace FluentAssertion.Selenium.Tests.Fluent.UnitTest
       string mathOperation = "somethingfornothing";
 
       // Assert when Math Operation string type doesn't match it should throw an Argument Exception with message is optional
-      _calculator.Invoking(c => c.Calculate(mathOperation, 1, 2))
-        .Should().Throw<ArgumentException>()
-        .WithMessage($@"Requested value '{mathOperation}' was not found.");
+      using (new AssertionScope())
+      {
+        _calculator.Invoking(c => c.Calculate(mathOperation, 1, 2))
+          .Should().Throw<ArgumentException>()
+          .WithMessage($@"Requested value '{mathOperation}' was not found.");
+      }
     }
 
     [Test]
