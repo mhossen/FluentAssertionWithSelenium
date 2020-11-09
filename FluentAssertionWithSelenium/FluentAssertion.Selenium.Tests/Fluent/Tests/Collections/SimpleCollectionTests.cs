@@ -9,7 +9,7 @@ using System.Linq;
 namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Collections
 {
   [TestFixture]
-  class SimpleCollectionTests : DriverBaseHook
+  class SimpleCollectionTests : DriverHook
   {
     private IList<IWebElement> _unorderedList => _driver.FindElements(By.XPath(".//ul[@id='unorderedList']/li"));
     [OneTimeSetUp]
@@ -33,6 +33,14 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Collections
     {
       _unorderedList.Select(t => t.Text)
         .Should().Contain(company);
+    }
+
+    [Test]
+    public void Confirm_ItemList_IsAscendingOrder()
+    {
+      // Assert to check if text is ascending order
+      _unorderedList.Select(t => t.Text).Should()
+        .BeInAscendingOrder();
     }
 
   }
