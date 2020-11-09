@@ -61,5 +61,5 @@ using (new AssertionScope())
     .And.Contain("user");
 }
 ```
-
+<br/>
 [Fluent Assertion Official Documentation](https://fluentassertions.com/introduction)
