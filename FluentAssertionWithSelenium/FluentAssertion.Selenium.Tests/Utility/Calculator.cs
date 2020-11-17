@@ -22,7 +22,7 @@ namespace FluentAssertion.Selenium.Tests.Utility
         case MathOperators.Mutliply:
           return x * y;
         default:
-          throw new ArgumentOutOfRangeException();
+          throw new ArgumentException($"Operator provided was not implemented");
       }
     }
 
@@ -43,7 +43,7 @@ namespace FluentAssertion.Selenium.Tests.Utility
         case MathOperators.Mutliply:
           return x * y;
         default:
-          throw new ArgumentException($@"Requested value '{operators}' was not found.");
+          throw new ArgumentException($"Operator provided was not implemented");
       }
     }
 
@@ -62,7 +62,7 @@ namespace FluentAssertion.Selenium.Tests.Utility
         case MathOperators.Mutliply:
           return x * y;
         default:
-          throw new ArgumentException($@"Requested value '{operators}' was not found.");
+          throw new ArgumentException($"Operator provided was {operators} not implemented");
       }
     }
   }

@@ -5,6 +5,7 @@
     Add,
     Sub,
     Divide,
-    Mutliply
+    Mutliply,
+    Abs
   }
 }
