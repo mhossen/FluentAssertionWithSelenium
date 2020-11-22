@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Collections
+namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Collections
 {
   [TestFixture]
   class SimpleCollectionTests : DriverBaseHook

@@ -38,7 +38,7 @@ namespace FluentAssertion.Selenium.Tests.Fluent.UnitTest
     public void Expected_ArgumentException_WithMessage_IsValid()
     {
       string mathOperation = "abs";
-      //ArgumentOutOfRangeException($"Operator provided was not implemented")
+
       using (new AssertionScope())
       {
         _calculator.Invoking(c => c.Calculate(mathOperation, 1, 2))

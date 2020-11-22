@@ -17,8 +17,12 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Hooks
     [OneTimeSetUp]
     public void BrowserSetup()
     {
-      new DriverManager().SetUpDriver(new ChromeConfig());
-      _driver = new ChromeDriver();
+      if (_driver is null)
+      {
+        new DriverManager().SetUpDriver(new ChromeConfig());
+        _driver = new ChromeDriver();
+      }
+
     }
 
     [OneTimeTearDown]

@@ -1,5 +1,4 @@
-﻿using FluentAssertion.Selenium.Tests.Enums;
-using FluentAssertion.Selenium.Tests.Fluent.Hooks;
+﻿using FluentAssertion.Selenium.Tests.Fluent.Hooks;
 using FluentAssertion.Selenium.Tests.Interfaces;
 using FluentAssertion.Selenium.Tests.Settings;
 using FluentAssertion.Selenium.Tests.Utility;
@@ -7,9 +6,8 @@ using FluentAssertions;
 using FluentAssertions.Execution;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
 
-namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Calculations
+namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Calculations
 {
   [TestFixture]
   public sealed class SampleCalculatorTests : DriverBaseHook
