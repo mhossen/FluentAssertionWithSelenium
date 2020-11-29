@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using FluentAssertions.Execution;
 using NUnit.Framework;
 
 namespace FluentAssertion.Selenium.Tests.Fluent.Hooks.SimpleTests

@@ -9,7 +9,7 @@ using System.Linq;
 namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Collections
 {
   [TestFixture]
-  class SimpleCollectionTests : DriverBaseHook
+  public sealed class SimpleCollectionTests : DriverBaseHook
   {
     private IList<IWebElement> _unorderedList => _driver.FindElements(By.XPath(".//ul[@id='unorderedList']/li"));
     [OneTimeSetUp]
@@ -25,14 +25,14 @@ namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Collections
         .Should().OnlyHaveUniqueItems();
     }
 
-    [TestCase("Amazon")]
     [TestCase("Apple")]
-    [TestCase("Cisco")]
+    [TestCase("Orange")]
+    [TestCase("Pomegranate")]
     [Order(2)]
-    public void Comfirm_ItemList_HasValue(string company)
+    public void Comfirm_ItemList_HasValue(string fruit)
     {
       _unorderedList.Select(t => t.Text)
-        .Should().Contain(company);
+        .Should().Contain(fruit);
     }
 
   }

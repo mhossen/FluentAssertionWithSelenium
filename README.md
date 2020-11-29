@@ -20,9 +20,6 @@ Before running this project I would check for the .Net SDK installed on my machi
 
 <br/>
 
-<img src="https://github.com/mhossen/FluentAssertionWithSelenium/blob/support-multi-framework/FluentAssertionWithSelenium/FluentAssertion.Selenium.Tests/Images/TrageFramework.jpg" alt="Target Framework" width="350" height="250"/>
-<br/>
-
 ### Text Evaluation
 
 ```csharp
@@ -52,7 +49,7 @@ message.Should().Contain("user");
 ```
 
 #### Assertion Scope
-Starts an unnamed scope within which multiple assertions can be executed and which will not throw until the scope is disposed.
+Assertion Scope batches multiple assertions so that when evaluating multiple facts, `FluentAssertions` throws one collective exception summary at the end of the scope for all failures. 
 
 ```csharp
 using (new AssertionScope())
@@ -63,5 +60,20 @@ using (new AssertionScope())
 }
 ```
 <br/>
+
+## Working With Collections
+```html
+    <ul class="list-group" id="unorderedList">
+      <li class="list-group-item">Apple</li>
+      <li class="list-group-item">Orange</li>
+      <li class="list-group-item">Lychee</li>
+      <li class="list-group-item">Pomegranate</li>
+      <li class="list-group-item">Watermelon</li>
+      <li class="list-group-item">Mangosteen</li>
+    </ul>
+```
+
+```csharp
+```
 
 [Fluent Assertion Official Documentation](https://fluentassertions.com/introduction)

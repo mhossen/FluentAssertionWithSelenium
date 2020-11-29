@@ -28,10 +28,8 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Hooks
     [OneTimeTearDown]
     public void TestCleanUp()
     {
-      if (_driver != null)
-      {
-        _driver.Quit();
-      }
+      _driver?.Close();
+      _driver?.Quit();
     }
 
   }
