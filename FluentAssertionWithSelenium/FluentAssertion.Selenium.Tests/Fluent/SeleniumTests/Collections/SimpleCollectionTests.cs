@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Collections
+namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Collections
 {
   [TestFixture]
   class SimpleCollectionTests : DriverHook
@@ -25,14 +25,14 @@ namespace FluentAssertion.Selenium.Tests.Fluent.Tests.Collections
         .Should().OnlyHaveUniqueItems();
     }
 
-    [TestCase("Amazon")]
     [TestCase("Apple")]
-    [TestCase("Cisco")]
+    [TestCase("Orange")]
+    [TestCase("Pomegranate")]
     [Order(2)]
-    public void Comfirm_ItemList_HasValue(string company)
+    public void Comfirm_ItemList_HasValue(string fruit)
     {
       _unorderedList.Select(t => t.Text)
-        .Should().Contain(company);
+        .Should().Contain(fruit);
     }
 
     [Test]
