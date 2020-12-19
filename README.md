@@ -1,4 +1,4 @@
-# FluentAssertion With Selenium
+# FluentAssertion with Selenium
 
 ***Notes:*** *This tests project doesn't focus on building a framework for Selenium, but uses selenium library with Fluent Assertion library to demonstrate uses for Assertion.*
 
@@ -35,7 +35,6 @@ Evaluates string starts with specific character(s) from the above example if we 
 message.Should().StartWith("Welcome");
 ```
 
-
 #### End With
 Evaluates string ends with specific character(s) from the above example if we want to check if the message has `John Smith`.
 
@@ -64,6 +63,7 @@ using (new AssertionScope())
 <br/>
 
 ## Working With Collections
+
 ```html
 <ul class="list-group" id="unorderedList">
    <li class="list-group-item">Apple</li>
@@ -74,13 +74,23 @@ using (new AssertionScope())
    <li class="list-group-item">Mangosteen</li>
 </ul>
 ```
-
+#### Checking Unique Items In Collection
+Checking for a list of element is coming back as unique.
 ```csharp
+driver.FindElements(By.XPath(".//ul/li")).Select(e => e.Text)
+.Should().OnlyHaveUniqueItems();
 ```
 
-[Fluent Assertion Official Documentation](https://fluentassertions.com/introduction)
+#### Checking For Collection In Ascending Order
+```csharp
+driver.FindElements(By.XPath(".//ul/li")).Select(e => e.Text)
+.Should().BeInAscendingOrder();
+```
+
+For more information checkout the [Fluent Assertion Official Documentation](https://fluentassertions.com/introduction)
 
 <br/>    
  <div class="footer">
         &copy; 2020 Mohammed Hossen
 </div>
+

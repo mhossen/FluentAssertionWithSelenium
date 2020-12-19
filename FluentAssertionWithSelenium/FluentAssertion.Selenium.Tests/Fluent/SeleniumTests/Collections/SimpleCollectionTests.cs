@@ -35,5 +35,11 @@ namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Collections
         .Should().Contain(fruit);
     }
 
+    [Test, Order(3)]
+    public void Confirm_ItemList_IsAscendingOrder()
+    {
+      _unorderedList.Select(t => t.Text)
+        .Should().BeInAscendingOrder();
+    }
   }
 }
