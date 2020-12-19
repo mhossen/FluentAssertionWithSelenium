@@ -10,7 +10,7 @@ using OpenQA.Selenium;
 namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Calculations
 {
   [TestFixture]
-  public sealed class SampleCalculatorTests : DriverBaseHook
+  public sealed class SampleCalculatorTests : DriverHook
   {
     private ICalculator _calculator;
 
@@ -101,7 +101,6 @@ namespace FluentAssertion.Selenium.Tests.Fluent.SeleniumTests.Calculations
     public void Forced_Failed_Validation()
     {
       // parsing the first rows of data from the table
-      //var mathOperator = _driver.FindElement(By.XPath(".//tbody/tr[4]/td[1]")).Text;
       var x = _driver.FindElement(By.XPath(".//tbody/tr[4]/td[2]")).Text;
       var y = _driver.FindElement(By.XPath(".//tbody/tr[4]/td[3]")).Text;
       var result = _driver.FindElement(By.XPath(".//tbody/tr[4]/td[4]")).Text;

@@ -5,11 +5,12 @@ using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 [assembly: Parallelizable(ParallelScope.Fixtures)]
 [assembly: LevelOfParallelism(5)]
+
 namespace FluentAssertion.Selenium.Tests.Fluent.Hooks
 {
 
   [SetUpFixture]
-  public abstract class DriverBaseHook
+  public abstract class DriverHook
   {
     protected IWebDriver _driver;
 
