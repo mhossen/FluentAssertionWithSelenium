@@ -6,7 +6,7 @@
 
 |Packages|Version|
 |:---|---:|
-|Target Framework |netcoreapp2.2|
+|Target Framework |netcoreapp3.1|
 |FluentAssertions|5.10.3|
 |nunit|3.12.0|
 |NUnit3TestAdapter|3.17.0|
